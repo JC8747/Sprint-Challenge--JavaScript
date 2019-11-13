@@ -1,34 +1,34 @@
 // ==== Objects ====
 
-/* 
-  Given the following information about dinosaurs, create 3 objects: 
-  Use this pattern to create your objects: 
+/*
+  Given the following information about dinosaurs, create 3 objects:
+  Use this pattern to create your objects:
   object name, diet, weight, length, period
 */
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
-
+let rex={name:"tyrannosaurus", diet:"carnivorous", weight:"7000kg", length:"12m", era:"Late Cretaceous", roar: () => "RAWERSRARARWERSARARARRRR!"};
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
-
+let stego={name:"stegosaurus", diet:"herbivorous", weight:"2000kg", length:"9m", era:"Late Jurraisc"};
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
-
+let raptor={name:"velociraptor", diet:"carnivorous", weight:"15kg", length:"1.8m", era:"Late Cretaceous"};
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(rex.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(raptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stego.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(rex.era);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(rex.roar());
 
 
 // ==== Arrays ====
@@ -52,19 +52,36 @@ const graduates = [
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-console.log(universities);
+
+function getunis() {
+    for(var i = 0; i < graduates.length; i++){
+      universities.push(graduates[i].university);
+  }
+  universities.sort()
+  return universities;
+}
+
+console.log(getunis());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
 
-The resulting contact information strings should have a space between the first name and the email, like this: 
+The resulting contact information strings should have a space between the first name and the email, like this:
 "Josh josh@example.com"
 
 Log the result of your new array. */
 const contactInfo = [];
-console.log(contactInfo);
+/*function getcontactinfo() {
+  graduates.forEach( graduates => {contactInfo.push(`${graduates.first_name}, ${gradutes.email}`)})
+  return contactInfo;
+}
+
+console.log(getcontactinfo());*/
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
+
+
+
 console.log(unisWithUni);
 
 
@@ -90,8 +107,6 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = [];
-console.log(displayNames);
 
 /* Request 2: .map()
 
@@ -102,7 +117,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 const lowCaseAnimalNames = [];
 console.log(lowCaseAnimalNames);
 
-/* Request 3: .filter() 
+/* Request 3: .filter()
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
@@ -110,7 +125,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 const lowPopulationAnimals = [];
 console.log(lowPopulationAnimals);
 
-/* Request 4: .reduce() 
+/* Request 4: .reduce()
 
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
